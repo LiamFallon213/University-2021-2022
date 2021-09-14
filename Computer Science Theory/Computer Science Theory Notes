@@ -60,6 +60,21 @@ Send bad ideas to purgatory
 
 ---
 
-## 9-7-21
+## 9-14-21
 
-### NFA's
+### Regular Exceptions
+
+- X* means any number of X's including 0.
+
+ - (xy)* = any number of copies of xy
+
+
+- X<sup>+</sup> = one or more X's
+
+ - (XY)<sup>+</sup> = one or more (XY)'s
+
+ - Concatanation works like implicit multiplicatior or iuses hollow dot like dot product.
+
+ - U = or
+
+ - ∩ = And
