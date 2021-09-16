@@ -78,3 +78,54 @@ Send bad ideas to purgatory
  - U = or
 
  - ∩ = And
+
+ ---
+
+ # 9-16-21
+
+ ## Project 1
+
+ ### Build State machine of gumball machine
+
+States:
+- Has Quarter
+- No Quarter
+
+Actions (transitions):
+- insertQuarter
+- removeQuarter
+- turnCrank
+
+## DFA/NFA Limitations
+
+If all regular languages have property ***P***, and some new language ***L*** does not have ***P***, then ***L*** is not a regular language.
+
+- All **finite** languages are regular
+
+  - You can build a DFA for each individual string in the languages  
+
+
+- All **non regular** languages are **infinite**
+
+- Finite Automata's (FA's) can not process **infinite** strings
+- **Arbitrarily** long strings are acceptable
+
+Languages where all strings have bounded size (each string has size <= n for some size n) are regular
+
+## Non regular languages
+
+### Must
+
+- be infinite
+
+- have arbitrarily long strings
+
+
+
+## Regular Language Properties
+Given a regular language *L*, ∃ a number *p* such that **any** string s ϵ *L* with | s |  ≥ *p*, can be divided into three pieces, *s=xyz* satisfying:
+- x y <sup>i</sup> z ϵ L, ∀ i ≥ 0
+- | y | > 0
+- | xy | ≤ p
+
+To prove language is not regular, you must prove there is no xyz that can fulfill the pumping lemma.
