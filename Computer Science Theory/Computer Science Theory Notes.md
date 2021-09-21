@@ -182,7 +182,7 @@ n<sub>0</sub>+|y|=n<sub>1</sub> // Added one Y from pumping lemma
 |y|=n<sub>0</sub>-n<sub>1</sub>  
 |y|= 0, |y|≠0  // |y| must not equal 0 by the pumping lemma  
 |y|≠|y|  
-∴ 
+∴
 >  
 contradiction
 
