@@ -1,0 +1,119 @@
+// NOTE: Code written in C++ style where whole classes don't have access modifiers. (except derived classes)
+class Person{
+  public:
+    string name;
+    string email;
+    Address address;
+
+    person(){
+      // Constructor;
+    };
+};
+
+class Address{
+  public:
+    string street, postalCode, city;
+
+    Address(){
+      // Constructor
+    }
+};
+
+class Employee: public person{};
+class SubContractor: public person{};
+
+class Customer: public person{
+  public BankAccount bankAccount;
+  customer(){
+    // Constructor
+  };
+  ~customer(){ //Destructors linked for complience with diagram
+    ~BankAccount();
+  };
+};
+
+Public class BankAccount{
+  public:
+    UnlimitedNatural number;
+    string depositor, bank;
+
+    BankAccount(){
+      // Constructor
+    };
+};
+
+class company {
+  public:
+    string name;
+    list<Employee> employees;
+    list<Customer> customers;
+    list<Truck> trucks;
+    list<Car> cars;
+    list<Motorbike> motorbikes;
+
+    company(){
+      //Constructor
+    }
+    ~company(){//Destructors linked for complience with diagram
+      ~VehicleRentalService();
+    }
+
+};
+
+class IRentable{
+  public:
+    virtual double rent() = 0;
+    boolean rented;
+    IRentable(){
+      //Constructor
+    }
+};
+
+class vehicle: public IRentable{
+  public:
+    UnlimitedNatural power;
+    string manufacturer, regNo;
+    double rent(){
+      // GETS RENT
+    };
+
+};
+
+class Truck: public vehicle{
+  public:
+    UnlimitedNatural weight, power;
+    Truck(){
+      //Constructor
+    }
+
+};
+class Car: public vehicle{
+  public:
+    CarKind kind;
+    UnlimitedNatural noSeats;
+    UnlimitedNatural power;
+    Car(){
+      //Constructor
+    }
+};
+class Motorbike: public vehicle{
+  public:
+    MbKind kind;
+    UnlimitedNatural cylinderCap;
+    Motorbike(){
+      //Constructor
+    }
+};
+
+class VehicleRentalService: Public Service{
+  public:
+    Vehicle vehicle;
+    void offerCar();
+    void offerMotorbike();
+    void offerTruck();
+};
+
+class Service{
+  public:
+    Customer customer;
+}

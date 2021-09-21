@@ -1,11 +1,13 @@
 # Computer Science Theory
 
+alt-l for unicode
+
 ## <a href="https://www.cs.montana.edu/yaw/teaching/338/main.html"> Course Schedule & syllabus </a>
 
 ---
-## 8-31-2020
 
 ###  <a href=http://www.jflap.org/> JFLAP software </a>
+## 8-31-2020
 Makes automata digitally
 <br>
 
@@ -124,8 +126,74 @@ Languages where all strings have bounded size (each string has size <= n for som
 
 ## Regular Language Properties
 Given a regular language *L*, ∃ a number *p* such that **any** string s ϵ *L* with | s |  ≥ *p*, can be divided into three pieces, *s=xyz* satisfying:
-- x y <sup>i</sup> z ϵ L, ∀ i ≥ 0
-- | y | > 0
-- | xy | ≤ p
+1. x y <sup>i</sup> z ϵ L, ∀ i ≥ 0
+2. | y | > 0
+3.  | xy | ≤ p
 
 To prove language is not regular, you must prove there is no xyz that can fulfill the pumping lemma.
+
+1. Suppose language is regular
+2. Select *p* from pumping lemma
+3. Carefully select string ϵ *L*, and | *s* | ≥ *p*
+4. Determine what *y* must consist of
+5. Make new string by selecting an *i*
+
+
+# 9-21-21
+
+## Pumping lemma
+
+> Given a regular language *L*, ∃ a number *p* such that **any** string s ϵ *L* with | s |  ≥ *p*, can be divided into three pieces, *s=xyz* satisfying:
+1. x y <sup>i</sup> z ϵ L, ∀ i ≥ 0
+2. | y | > 0
+3.  | xy | ≤ p
+
+- A property that every regular language Has
+
+### Non Regularity Proofs
+
+1. Suppose language is regular
+2. Select *p* from pumping lemma
+3. Carefully select string ϵ *L* and | *s* | ≥ *p*
+4. Determine what *y* must consist of
+5. Make new string by selecting an *i*
+6. Show new string is not in language
+
+Assume language is regular, show it breaks pumping lemma, contradiction ∴ irregular
+
+#### Example 1
+> Claim: the language *L*={0<sup>n</sup> 1<sup>n </sup>:n ≥ 0} is not Regular    
+>
+>Proof: Suppose *L* is regular. Let *p* be the number from the pumping lemma.
+>   
+> Consider s=0<sup>p</sup>1<sup>p</sup>.  
+> Since *s* ϵ *L* and |s| ≥*p*, the conditions of the pumping lemma must hold for *s=xyz*  
+>
+> y=0<sup>k</sup> for some k > 0 since Y must exist in the first P characters and the first P characters = 0.                   
+>
+> s=[0<sup>p-k</sup>][0<sup>k</sup>][1<sup>p</sup>]=[x y z]  
+> s'=[x y<sup>2</sup> z]  
+s'= [0<sup>p-k</sup>][0<sup>k</sup>]<sup>2</sup>[1<sup>p</sup>]
+>  
+>  n<sub>0</sub>=n<sub>1</sub>  
+n<sub>0</sub>=|x|+|y|+B  
+n<sub>1</sub>= |z|-B  
+n<sub>0</sub>+|y|=n<sub>1</sub> // Added one Y from pumping lemma  
+|y|=n<sub>0</sub>-n<sub>1</sub>  
+|y|= 0, |y|≠0  // |y| must not equal 0 by the pumping lemma  
+|y|≠|y|  
+∴ 
+>  
+contradiction
+
+How to do Proof
+1. Select *s* that will work with *s* ϵ *L* and |*s*| ≥ *p*
+2. Find some conditions that *y* must meet
+3. Select an *i*, (Number of times to repeat *y*)
+4. Show what *s*' equals
+5. Show *s*' is not in *L*
+
+Pumping lemma TLDR:
+
+Pick a number less then the length of the string, p.
+Split some string into 3 sections x,y,z where only Y must exist. X and Y have to happen before P. Now pick a good y that when repeated takes the string out of the language.
