@@ -193,7 +193,15 @@ How to do Proof
 4. Show what *s*' equals
 5. Show *s*' is not in *L*
 
-Pumping lemma TLDR:
+**Pumping lemma TLDR:**
 
 Pick a number less then the length of the string, p.
 Split some string into 3 sections x,y,z where only Y must exist. X and Y have to happen before P. Now pick a good y that when repeated takes the string out of the language.
+
+If there is no *i* that pushes the string out of the language, pick a new string.
+
+---
+
+# 9-21-21
+
+- it is possible to pick bad s's
