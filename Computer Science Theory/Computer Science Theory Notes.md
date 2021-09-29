@@ -205,3 +205,19 @@ If there is no *i* that pushes the string out of the language, pick a new string
 # 9-21-21
 
 - it is possible to pick bad s's
+
+---
+
+# 9-28-21
+
+- Can assume anything proven in class or on homeworks
+- 5 questions
+
+  - show language is Regular
+
+  - show one is not regular x2
+  - conceptual questions
+- One thing to bring for notes is the exact text for the pumping lemma
+
+
+## Sample questions
