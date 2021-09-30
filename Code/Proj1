@@ -1,0 +1,88 @@
+// player class
+public class Player{
+  private state currentState;
+  private state running;
+  private state walking;
+  private state blocking;
+  private state idle;
+  private state dead;
+  private state cutScene;
+  private state attacking;
+  private state jumping;
+
+
+  public void setState(State stateIn){
+    currentState = stateIn;
+  }
+}
+
+//state classes
+public class State{
+  //player actions
+  public void run();
+  public void walk();
+  public void jump();
+  public void attack();
+  public void block();
+  public void skipCutscene();
+  public void stop();
+  //system actions
+  public void kill();
+  public void startCutscene();
+  public void endCutscene();
+  public void ressurect();
+  public void setIdle();
+  public void setRunning();
+  public void setWalking();
+  public void stun();
+}
+
+public class Attacking impliments State{
+  private Player player;
+
+}
+public class Blocking impliments State{
+  private Player player;
+
+}
+public class Running impliments State{
+  private Player player;
+  @Override
+  public void setWalking(){
+    player.setState(Walking);
+  }
+}
+public class Walking impliments State{
+  private Player player;
+  @Override
+  public void setWalking(){
+    player.setState(Walking);
+  }
+}
+public class Jumping impliments State{
+  private Player player;
+  @Override
+  public void setWalking(){
+    player.setState(Walking);
+  }
+}
+public class Idle impliments State{
+  private Player player;
+  @Override
+  public void setWalking(){
+    player.setState(Walking);
+  }
+}
+public class Dead impliments State{
+  private Player player;
+
+}
+public class CutScene impliments State{
+  private Player player;
+
+}
+
+public class X impliments State{
+  private Player player;
+
+}

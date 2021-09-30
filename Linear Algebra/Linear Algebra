@@ -1,3 +1,27 @@
 # Linear Algebra
 ---
-## 9-1-21
+# Chapter 3
+---
+# 9-29-21
+
+## Vector spaces
+
+Definition: A **vector space** is a set of objects (referred to as abstract vectors) that can be *added* to each other and *multiplied by scalers* so that the following rules hold
+1. x+y=y+x
+2. x+(y+z)=(x+y)+z
+3. α(x+y)=αx+αy
+
+Ex of Vector Space: n-duim cartesian space ℝ<sup>n</sup> of (column) vect x<sup>-></sup> [x1,x2,x3...]<sup>T</sup>
+2. P<sub>n</sub> the *set* of all polynomials of degree ≤ n.
+Consisely, P<sub>2</sub>={ax<sup>2</sup>+bx+c : a,b,c ∈ ℝ}.
+
+3. The set of all real functions; f:ℝ → ℝ
+
+M<sub>N</sub> = the set of all M x N matricies.
+
+On the test, is something a subspace.
+
+Definition: A subspace is an (ambient) vector space is a set *S*, contained in the vector space, that is "closed under t and." that is two conditions are satisfied.
+1. if v,w are in *S* then v+w is in *S*
+2. if v is in *S* and c is a scaler then cv ∈ *S*
+L= {α v<sup>-></sup> : α ∈ ℝ}
