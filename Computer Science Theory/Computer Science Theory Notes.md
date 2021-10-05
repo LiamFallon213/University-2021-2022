@@ -1,6 +1,8 @@
 # Computer Science Theory
 
-alt-l for unicode
+*Keybinds*
+>alt-l for unicode  
+>ctrl-shift-m for preview
 
 ## <a href="https://www.cs.montana.edu/yaw/teaching/338/main.html"> Course Schedule & syllabus </a>
 
@@ -219,5 +221,121 @@ If there is no *i* that pushes the string out of the language, pick a new string
   - conceptual questions
 - One thing to bring for notes is the exact text for the pumping lemma
 
+---
+# 10-5-21
+## Computational Models
+- DFA
 
-## Sample questions
+- NFA
+- PDA (Pushdown Automaton)
+  - DFA with a memory stack
+
+
+- *Turing Machine*
+
+  - DFA with RAM
+
+## Turing machine
+- Finite automata with unrestricted memory (RAM / Tape)
+
+- Turing Machine has RAM accessed with a read write head
+
+- Can read from and write to memory
+- Can access any spot in memory
+- Access to infinite memory (unbounded)
+- If it can calculate, it will be done with finite resources
+- Start Config: Start State, input on tape, r/w head on the far left
+- ∃ states other then accept or reject
+- Accept and reject take effect instantly
+
+### TM's consist of
+- finite set of states, Q
+- Finite input alphabet, ∑(does not include blank symbol)
+-  finite tape alphabet, Γ( includes [blank char], ∑ ⊂ Γ)
+
+### TM example
+How would you use a TM's tape to see if a string is in the language
+
+L={ a<sup>n</sup>b<sup>n</sup>c<sup>n</sup>: n≥0 }
+
+| a<sup>\\/ | a   | a   | b   | b   | b   | c   | c   | c   |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+Memory initial state: input on tape, R/W head at start.
+> ω = the current cell
+
+TM M: on input ω
+1. if ω = ε accept: otherwise, change first *a* to a 1
+| 1<sup>\\/ | a   | a   | b   | b   | b   | c   | c   | c   |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+2. Move right to first *b* and change to a 2: reject if c or a null entry found first
+| 1<sup>| a   | a   | 2<sup>\\/    | b   | b   | c   | c   | c   |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+3. Move right to first *c* and change to a 3, reject if a or *null* is found first
+| 1<sup>| a | a | 2  | b | b | 3 <sup>\\/  | c | c |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+4. Move back to first *a*, by finding the character directly following the last 1.
+| 1   | a <sup>\\/ | a   | 2   | b   | b   | 3   | c   | c   |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+5. Move right to verify not *b* or *c* exist. If so, reject. If not, accept.
+| 1   | 1 <sup>\\/ | a   | 2   | b   | b   | 3   | c   | c   |     |     |
+| --- | ---------- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+</br>Example Tape of Turing Machine</br>
+
+| a<sup>\\/ | a   | a   | b   | b   | b   | c   | c   | c   |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+
+
+
+| 1<sup>\\/ | a   | a   | b   | b   | b   | c   | c   | c   |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+
+| 1<sup>| a   | a   | 2<sup>\\/    | b   | b   | c   | c   | c   |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+
+| 1<sup>| a | a | 2  | b | b | 3 <sup>\\/  | c | c |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+
+| 1   | a <sup>\\/ | a   | 2   | b   | b   | 3   | c   | c   |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+
+| 1   | 1 <sup>\\/ | a   | 2   | b   | b   | 3   | c   | c   |     |     |
+| --- | ---------- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+
+| 1   | 1   | a   | 2   | 2 <sup>\\/ | b   | 3   | c   | c   |     |     |
+| --- | --- | --- | --- | ---------- | --- | --- | --- | --- | --- | --- |
+
+
+| 1   | 1   | a   | 2   | 2   | b   | 3   | 3 <sup>\\/ | c   |     |     |
+| --- | --- | --- | --- | --- | --- | --- | ---------- | --- | --- | --- |
+
+
+| 1   | 1   | 1  <sup>\\/ | 2   | 2   | b   | 3   | 3   | c   |     |     |
+| --- | --- | ----------- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+
+| 1   | 1   | 1   | 2   | 2   | 2  <sup>\\/ | 3   | 3   | c   |     |     |
+| --- | --- | --- | --- | --- | ----------- | --- | --- | --- | --- | --- |
+
+
+| 1   | 1   | 1   | 2   | 2   | 2   | 3   | 3   | 3  <sup>\\/ |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | ----------- | --- | --- |
+
+
+| 1   | 1   | 1   | 2   | 2   | 2   | 3   | 3   | 3   | <sup>\\/ |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | -------- | --- |
+
+We have now got a *null* character, exit loop, check for other letters, and accept or reject
+
+Things better then a Turing machine are **Hypercomputers**
+
+Language is Turing recognizable if there is a TM that accepts every string in the language and nothing else
+
+Language is Turing Decidable if it halts on every possible input
