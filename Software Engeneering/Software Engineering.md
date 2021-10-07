@@ -151,8 +151,24 @@ Split problem into smaller problems
 ### Devsec ops
 
 ---
-# 9-21-21
+# 10-7-21
 
-## Assignment 2
+## Design Patterns
+### Adapter Class
+- System 1a and client b
 
--
+  - Both systems have their own interface
+
+  - Class a and b therefore can't directly interface
+  - Create an adapter class works as a bridge between the systems.
+###Singleton Pattern
+- Each instance contains only a single instance of a Class
+ - You have server A,B, & C
+ - You have class resources
+  - System information class R<sub>1</sub>
+    - R<sub>1</sub> ->  CPU = 80%
+  - No reason to have more then a single instance of that class, as it can be somewhat a loop, where two end up measuring each other
+  - 
+
+
+---
