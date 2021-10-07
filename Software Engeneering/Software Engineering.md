@@ -168,7 +168,41 @@ Split problem into smaller problems
   - System information class R<sub>1</sub>
     - R<sub>1</sub> ->  CPU = 80%
   - No reason to have more then a single instance of that class, as it can be somewhat a loop, where two end up measuring each other
+- Singleton pattern gives us global point of access, like a global variable, but without the downsides.
+  - downsides include
+    - if it's a large object it could be resource intensive to always have it in scope.
+
+```
+public class Singleton{  
+      private static Singleton uniqueInstance;
+      // other useful instance variables here
+      private Singleton();
+      public static getInstance(){
+        // only works because this is a static function
+        if (uniqueInstance == NULL){
+          uniqueInstance = new Singleton;
+        }
+        return uniqueInstance;
+        }
+        // other useful shit here
+      }
+
+}
+
+// call class
+
+Singleton.getInstance();
+// on time 1, it makes a new instance, all other times it returns the same instance.
+```
+
+```
+if (instance does not exist){
+  make new instance
+} else{
+  return existing instance
+}
+```
+### Gumball Machine
+  - State diagrams
   - 
-
-
 ---

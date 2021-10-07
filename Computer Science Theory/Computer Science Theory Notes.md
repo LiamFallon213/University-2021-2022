@@ -339,3 +339,24 @@ Things better then a Turing machine are **Hypercomputers**
 Language is Turing recognizable if there is a TM that accepts every string in the language and nothing else
 
 Language is Turing Decidable if it halts on every possible input
+---
+# 10/7/21
+- A<sub>DFA</sub> = <B,ω>
+  - <> denotes string encoding of some object
+## Decidability
+- a *Decidable* language is one which has a decider
+  - a decider is a Turing machine that will always halt on a reject state.
+
+>A recognizer is a Turing machine that **Accepts** everything it must accept, and nothing it shouldn't.
+
+>A Decider is a recognizer that also rejects what it doesn't accept.
+
+>A language is decidable if you can make a decider for it.
+
+**Claim:** A<sub>DFA</sub> = {<B,ω>: B is a DFA that accepts string ω} is a decidable language.
+
+**Proof:**
+M<sub>1</sub> = on input <B,ω>  
+1. Run B on ω
+2. If B accepts, accept. If B rejects, reject.
+3. 
