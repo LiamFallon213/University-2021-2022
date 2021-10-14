@@ -359,4 +359,58 @@ Language is Turing Decidable if it halts on every possible input
 M<sub>1</sub> = on input <B,ω>  
 1. Run B on ω
 2. If B accepts, accept. If B rejects, reject.
-3. 
+
+
+**Claim:** A<sub>NFA</sub> = {\<A>: B is a DFA and L(A)=∅} is decidable.
+
+**Proof:**
+M<sub>1</sub> = on input <B,ω>  
+1. Run B on ω
+2. If B accepts, accept. If B rejects, reject.
+
+# 10/12/21
+
+- Deciders must halt on all inputs
+
+- Deciders must reject everything they don't accept
+- Deciders must accept what they are supposed to.
+
+# DECIDERS WE HAVE SOLVED
+- A<sub>dfa</sub>
+  > A<sub>dfa</sub> = { <M, w> | M is a DFA accepting input w}
+
+  >**Theorem:** A<sub>dfa</sub> is decidable.  
+  >**Proof:** We construct a DFA M, deciding A<sub>dfa</sub>.  
+  1. Run M on input w.
+  2. If M accepts accept, if M rejects reject.
+
+- All DFA
+-  E<sub>dfa</sub> (Empty DFA)
+>  E<sub>dfa</sub> = { \<M> | M is a DFA and L(M) = Ø }
+
+  >**Theorem:** E<sub>dfa</sub> is decidable.   
+ **Proof:** The following machine decides it:  
+ >T := “On input  M, where M is a DFA,
+ 1. Mark the start state of M.
+ 2. Repeat until no new states are marked in an iteration through all states:
+    - Mark any state that has a transition coming from a marked state
+ 3. If no accept state is marked, accept; otherwise reject.”
+
+
+- EQ<sub>dfa</sub> (Equal Language DFA's)
+> - Construct DFA C as (A∩B<sup>-1</sup>)U(A<sup>-1</sup>∩B)
+  - Run (E<sub>dfa</sub>) on C
+
+- Infinite<sub>dfa</sub>
+> - |L(A)| = ∞ ⇔ ∃ loops in A.
+  - Loops in A ⇔ A accepts strings ≥ # of states in A.  
+
+  >  M<sub>5</sub> on input \<A>
+  1. Let p be the number of states in A
+  2. Construct DFA D that accepts strings of all lengths
+  3. Construct DFA M where L(M)= L(A) ∩ L(D)
+  4. Run E<sub>dfa</sub> on \<M>
+  5. if decider accepts reject
+
+# 10/14/21
+## Undecidability
