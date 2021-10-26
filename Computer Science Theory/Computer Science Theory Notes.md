@@ -376,7 +376,7 @@ M<sub>1</sub> = on input <B,ω>
 - Deciders must accept what they are supposed to.
 
 # DECIDERS WE HAVE SOLVED
-- A<sub>dfa</sub>
+- ***A<sub>dfa</sub>***
   > A<sub>dfa</sub> = { <M, w> | M is a DFA accepting input w}
 
   >**Theorem:** A<sub>dfa</sub> is decidable.  
@@ -384,8 +384,8 @@ M<sub>1</sub> = on input <B,ω>
   1. Run M on input w.
   2. If M accepts accept, if M rejects reject.
 
-- All DFA
--  E<sub>dfa</sub> (Empty DFA)
+- ***All DFA***
+- ***E<sub>dfa</sub>*** (Empty DFA)
 >  E<sub>dfa</sub> = { \<M> | M is a DFA and L(M) = Ø }
 
   >**Theorem:** E<sub>dfa</sub> is decidable.   
@@ -397,11 +397,11 @@ M<sub>1</sub> = on input <B,ω>
  3. If no accept state is marked, accept; otherwise reject.”
 
 
-- EQ<sub>dfa</sub> (Equal Language DFA's)
+- ***EQ<sub>dfa</sub>*** (Equal Language DFA's)
 > - Construct DFA C as (A∩B<sup>-1</sup>)U(A<sup>-1</sup>∩B)
   - Run (E<sub>dfa</sub>) on C
 
-- Infinite<sub>dfa</sub>
+- ***Infinite<sub>dfa</sub>***
 > - |L(A)| = ∞ ⇔ ∃ loops in A.
   - Loops in A ⇔ A accepts strings ≥ # of states in A.  
 
@@ -414,3 +414,66 @@ M<sub>1</sub> = on input <B,ω>
 
 # 10/14/21
 ## Undecidability
+### Undecidable problems
+### A<sub>TM</sub>
+
+TLDR: If you feed the decider its self everything breaks.
+> {\<M,ω>: M is a Turing Machine and M accepts ω (some input)}
+> D is the decider for A<sub>tm</sub>
+> D<M,ω>
+1. if M accepts ω accept
+2. reject if M rejects
+
+> - The Set of Turing Machines is Countable (Can be put into correspondence with ℂ (The set of all countable numbers))
+> - Claim: The set of all possible Turing machines is countable.
+> - Proof: You can order the algorithmic Turing machines in an order and count them  
+> All inputs are also Countable  
+> Infinite table of all Turing machines of all inputs  
+> What is going to happed to D (decider for A<sub>TM</sub>)
+> table can't be filled out it is not a decider
+> ***THE HALTING PROBLEM** if you feed it it's self, and it accepts, then it rejects, meaning it accepts, meaning it rejects, etc etc
+
+### HALT<sub>tm</sub> The Halting Problem
+> Claim HALT: HALT<sub>tm</sub> = {<M,ω>: M is a TM and M halts on ω} is undecidable
+
+>Proof: Suppose HALT<sub>tm</sub> is decidable and let TM H be it's Decider  
+>Build a TM that decides A<sub>tm</sub>
+>
+>  S= on input <M, ω>
+  1. Run H on <M, ω>
+  2. if H rejects, reject.
+  3. if H accepts run M on ω until it halts.
+  4. if M accepts, accept, and vice versa
+  S is a decider for A<sub>tm</sub>  
+∴ HALT<sub>tm</sub> is undecidable
+
+### E<sub>tm</sub>: Empty TM
+
+> Claim: E<sub>TM</sub>{ <M>: M is a TM and L(M)=∅} is undecidable.
+
+>Proof: Suppose E<sub>TM</sub> is decidible and let TM H be it's decider
+>
+>Build a TM S that decides A<sub>TM</sub>
+> S= on input <N,ω>  
+>
+> 1. Construct TM M2 on input (x):  
+> a. if X ≠ ω reject  
+> b. if x = ω run N on ω and accept if N does
+> 2. Run H on \<M2>.
+> 3. If H accepts Reject. If H rejects, accept.
+
+# 10-26-21
+
+Proof: ~~~
+
+Justification: if N accepts w  L(M2) = Σ*. If N does not accept w, L(M2)= ∅. So using H to decide if L(M2) is finite or not determines if N accepts w. Therefore S is a decider for A<sub>TM</sub>, which is a contridiction, so FINITE<sub>TM</sub> is undecidible.
+
+look up what is the church turing thesis
+
+
+
+LIST OF THINGS WE HAVE DECIDERS FOR:
+
+EQDFA
+INFINITE dfa
+ADFA
