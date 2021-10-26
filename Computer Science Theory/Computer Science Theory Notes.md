@@ -477,3 +477,6 @@ LIST OF THINGS WE HAVE DECIDERS FOR:
 EQDFA
 INFINITE dfa
 ADFA
+more
+
+When studying look at the infinite DFA decidible problem.
