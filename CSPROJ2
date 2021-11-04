@@ -1,0 +1,43 @@
+import java.util.Arrays;
+
+/**
+ *
+ * @author yaw
+ */
+public class DFAToolBox {
+
+    // A_DFA. Does a given DFA accept a given string?
+    public static boolean aDFA(DFA dfa, String w) {
+        String currentState = dfa.getStartState();
+        for (char character : w.toCharArray()) {
+            currentState = dfa.getTransitions().get(currentState).get(character);
+        }
+        return Arrays.asList(dfa.getAcceptStates()).contains(currentState);
+    }
+
+    // E_DFA. Is the language of a given DFA empty?
+    public static boolean eDFA(DFA dfa) {
+        return false;
+    /**
+    Get DFA language into object AL.
+    Get DFA start state.
+    Mark start state.
+
+    */
+    }
+
+    // EQ_DFA. Are the languages of two given DFAs identical?
+    public static boolean eqDFA(DFA dfa1, DFA dfa2) {
+        return false;
+    }
+
+    // INFINITE_DFA. Is the language of a given DFA infinite in size?
+    public static boolean infDFA(DFA dfa) {
+        return false;
+    }
+
+    // ALL_DFA. Does the language of a given DFA include every possible string over its alphabet?
+    public static boolean allDFA(DFA dfa) {
+        return false;
+    }
+}

@@ -462,6 +462,14 @@ TLDR: If you feed the decider its self everything breaks.
 > 2. Run H on \<M2>.
 > 3. If H accepts Reject. If H rejects, accept.
 
+
+OTHER UNDECIDIBLES
+
+- INFINITE TM
+- halting ε
+- FINITE TM
+
+
 # 10-26-21
 
 Proof: ~~~
@@ -480,3 +488,13 @@ ADFA
 more
 
 When studying look at the infinite DFA decidible problem.
+
+### Vertex Cover
+
+> Vertex Cover<sub>1</sub> = {<G,k>:G = (V,E) is a graph and k is an integer ≤ |V| such that there exists some point V'ϵ V, with |V'| ≤ k, such that each edge in E contains an endpoint in V'}
+
+**Vertex Cover: Given a graph G = (V,E) and integer k ≤ |V|, is there V' ⊆ V with |V'| ≤ k, m such that each edge in E contains an end point in V.**
+
+A vertex cover is a set of vertices, such that all edges have and endpoint connecting to a member of the cover.
+
+**Independent Set: Given a graph G = (V,E) and integer k ≤ |V|, is there V' ⊆ V with |V'| ≥ k, m such that no 2 vertices ϵ V' are adajacent.**

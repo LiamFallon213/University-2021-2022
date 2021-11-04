@@ -6,7 +6,7 @@
 ### Software development life cycle (SDLC) process
 
 1. Gather requirements
-2. Design
+2. Design\
 3. Development
 4. Testing
 5. Deploy
@@ -151,7 +151,7 @@ Split problem into smaller problems
 ### Devsec ops
 
 ---
-# 10-7-21
+# 10-7-21 - 11/4/21
 
 ## Design Patterns
 ### Adapter Class
@@ -205,8 +205,73 @@ if (instance does not exist){
 ### Gumball Machine
   - State diagrams
   -
----
+`---`
 
 ### Cyber Security
 
--1
+TESTING STRATAGIES
+
+White box
+
+Integration tests = test how parts work together
+
+Unit testing = test the parts
+
+### Program Analysis
+
+- Node / Basic Block : Largest piece of code that **ALWAYS** executes together
+
+- Represent code as a directed graph of nodes
+  - node S := start node
+  - node T := end (termanation) nodes
+  - Any unique path from S -> T is a possible execution path
+  - ep(g) = {All unique paths from S -> t }
+  - some paths are infeasable
+  - Any loop ⇒ infinite paths
+
+- Node coverage : Statement Coverage
+
+- Edge coverage : Branch Coverage / Flow tesing
+ - Try to cover as many edges as possible with a test
+ - Better then Node coverage
+
+- Other options
+  - All Acyclic paths
+
+  - go through all loops 0 & 1 times
+  - *Mc Cabes Criteria*
+    - All linearly independant paths
+
+    -  Misses acyclic paths
+
+  - Acyclic paths + 1 run of each loop
+
+
+- Black Box Testing: testing with no internal access
+
+- White box testing: testing with internal access
+
+### Mutation Testing
+ Test the tests
+
+Intentionally make bugs in program, them see if your tests catch them
+
+Differential Testing
+
+-  Test two or more systems that should give same output if given same input, see if <nobr> output = output </nobr>
+
+  - A(x), B(x) if <nobr>A(x) ≠ B(x)</nobr>, something is wrong in either system
+
+  - Only tests one pathway
+  - If both are broken in same way tells us nothing
+  - Might not have second system
+
+### Metamorphic testing
+
+Find **Metamorphic Relations:** *How your output changes based on the input*.
+
+*O := P(i)* where *P* is some program with input *i*, *O* is defined as the output of *P(i)*
+
+Find  <sup>ΔO</sup>/<sub>Δi</sub>
+
+Check if experimental <sup>ΔO</sup>/<sub>Δi</sub> matches theoretical <sup>ΔO</sup>/<sub>Δi</sub>
