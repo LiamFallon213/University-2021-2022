@@ -275,3 +275,5 @@ Find **Metamorphic Relations:** *How your output changes based on the input*.
 Find  <sup>ΔO</sup>/<sub>Δi</sub>
 
 Check if experimental <sup>ΔO</sup>/<sub>Δi</sub> matches theoretical <sup>ΔO</sup>/<sub>Δi</sub>
+
+∴

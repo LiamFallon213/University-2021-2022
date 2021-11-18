@@ -498,3 +498,60 @@ When studying look at the infinite DFA decidible problem.
 A vertex cover is a set of vertices, such that all edges have and endpoint connecting to a member of the cover.
 
 **Independent Set: Given a graph G = (V,E) and integer k ≤ |V|, is there V' ⊆ V with |V'| ≥ k, m such that no 2 vertices ϵ V' are adajacent.**
+
+# 11/9/21
+
+ϕ = (x<sub>1</sub> ∨ x<sub>2</sub> ∨ x<sub>3</sub>) ∧ (¬x<sub>1</sub> ∨ ¬x<sub>2</sub> ∨ ¬x<sub>3</sub>) ∧ (¬x<sub>1</sub> ∨ x<sub>2</sub> ∨ x<sub>3</sub>)
+
+SAT = ϕ is satisfiable formula  
+3SAT = ϕ is satisfiable formula with 3 variables per clause
+
+## NP complete problems
+
+If you can solve any NP complete problem in polynomial time, you can solve all NP problems in polynomial time.
+
+NP Complete problems
+- Vertex Covers
+- Independent Set
+- SAT
+- 3SAT
+
+If ∃ a polynomial time algorithm for a NP complete problem, or NP hard problem, that can be used to solve any NP problem in polynomial time.
+
+NP problems are usually decisions problem.
+
+### NP complete formal definition
+
+> A problem is in NP complete if it satisfies two contradictions
+> 1. B ∈ NP
+> 2. For every A ∈ NP, A ≤ <sub>p</sub> B.
+
+Polynomial Time Reduction
+- A reduces to B if A can be solved with a solver for B
+
+### Cook Levin Theorem
+
+Claim: SAT ∈ NP-complete
+Proof:
+
+
+# 11/16/21
+
+NP completeness
+
+ How to prove
+
+ 1. show in NP
+ 2. show it can solve a known NP-Complete problem
+
+ A clique is a completely connected subgraph
+
+
+### 3 sat -> clique Proof
+Let φ be a formula with k clauses. Generate an undirected graph G:
+
+for each clause ϕ, make a node for each literal. Make edge between every pair of nodes, except:
+
+1. Nodes in same clause
+2. nodes that are negations of eachother
+3. 
