@@ -1,4 +1,4 @@
-# Computer Science Theory
+Dominating's# Computer Science Theory
 
 *Keybinds*
 >alt-l for unicode  
@@ -554,4 +554,64 @@ for each clause ϕ, make a node for each literal. Make edge between every pair o
 
 1. Nodes in same clause
 2. nodes that are negations of eachother
-3. 
+
+# 11/18/21
+Reducibility
+
+- USE VERTEX COVER ON QUIZ
+
+Vertex Cover
+- a set of vertexes that means every edge has at least one edge in a vertex in the Set
+
+Solve with Clique, as it is also a graph problem
+
+### VERTEX is NP complete proof
+1. show it's in NP
+   1. Nondeterministic solver, or polynomial vertex Cover
+2. See if VC ⊆ Graph
+3. Solve Clique with Vertex Cover solver
+4. Invert the edges (if two vertex's are connected, remove connection, if they are not connected connect them)
+5. The vertex's that are not in the clique, are the vertex cover.
+   1. ∃*k*-Clique ⇔ ∃(n-k)-vertex cover
+
+CLAIM: CLIQUE ≤<sub>p</sub> VC
+Proof: let *G=(VE), k* be input to the clique problem, where | *V*| = *n*. Construct the compliment graph Ḡ = (V, Ē) by checking each pair of vertices and making them an edge in Ē if they are not an edge in E. O(n^2) time.
+
+*G* has a *k*-clique ⇔ *Ḡ* has an *(n-k)-VC*
+
+⇒ Suppose *G* has a k-clique *Q*, consider *C=V\\Q*. Show *C* is an *(n-k) -VC*. For C to be a VC if Ḡ, each edge in Ē must contain a vertex from C. Consider an edge e in Ē where neither vertex is in C.....
+
+If the edge exists, then they are in the clique, something some thing.
+
+⇐ Suppose Ḡ has an *(n-k)-VC, C* consider Q=V\\C. Show Q is a k clique. For Q to be a clique in G, each pair of it's vertices must share an edge in E. Consider a pair of vertices in Q that do not share an edge in E.....
+
+
+### homework
+- Hamiltonian cycle
+-
+
+
+---
+
+
+Think of every graph as a complete graph where some edges are removed.
+
+
+---
+# 11/30/21
+
+Project 3: performance metrics are Accuracy and Speed
+
+Dominating set: all vertices have a link to something in the set
+
+Vertex cover to Dominating set.
+
+For every single edge on the graph, make it into a triangle. 2 nodes connected with a third connected to each.
+
+Suppose new graph has a dominating set.
+
+If the dominating set contains a new node, move it to another node in the triangle.
+
+Independent set can solve vertex cover and vice versa.
+
+Don't put anything on test that you didn't come up with.
